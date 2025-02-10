@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+      - go-cache:/go
+    command: sleep infinity
+    environment:
+      - TZ=Asia/Tokyo
+
+volumes:
+  go-cache:
